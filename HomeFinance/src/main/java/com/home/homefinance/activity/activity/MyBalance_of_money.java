@@ -2,7 +2,7 @@ package com.home.homefinance.activity.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import com.home.homefinance.R;
+import com.home.HomeFinance.R;
 
 
 public class MyBalance_of_money extends Activity {

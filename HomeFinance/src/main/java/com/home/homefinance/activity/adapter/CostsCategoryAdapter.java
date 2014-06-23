@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import com.home.homefinance.R;
+import com.home.HomeFinance.R;
 import com.home.homefinance.activity.myListCosts.CostsCategory;
 
 import java.util.List;

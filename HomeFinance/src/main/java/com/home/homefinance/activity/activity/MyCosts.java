@@ -4,7 +4,7 @@ package com.home.homefinance.activity.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.ListView;
-import com.home.homefinance.R;
+import com.home.HomeFinance.R;
 import com.home.homefinance.activity.adapter.CostsCategoryAdapter;
 import com.home.homefinance.activity.myListCosts.CostsCategory;
 

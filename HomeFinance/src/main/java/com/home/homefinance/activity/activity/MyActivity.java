@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import com.home.homefinance.R;
+import com.home.HomeFinance.R;
 
 
 public class MyActivity extends Activity {
