@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+        >
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            />
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="122dp"
+            android:text="Balance_of_money"
+            android:id="@+id/buttonBalance"
+            android:textStyle="bold"
+            android:focusableInTouchMode="true"
+            android:onClick="onShow"/>
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="122dp"
+            android:text="Costs"
+            android:id="@+id/buttonCosts"
+            android:textStyle="bold"
+            android:focusableInTouchMode="true"
+            android:onClick="onShow"/>
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="122dp"
+            android:text="Earnings"
+            android:id="@+id/buttonEarnings"
+            android:textStyle="bold"
+            android:focusableInTouchMode="true"
+            android:onClick="onShow"/>
+</LinearLayout>
