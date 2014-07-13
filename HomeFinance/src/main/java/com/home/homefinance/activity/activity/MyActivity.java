@@ -31,6 +31,14 @@ public class MyActivity extends Activity {
                 intent = new Intent(this,MyEarnings.class);
                 startActivity(intent);
                 break;
+            case R.id.buttonPlan:
+                intent = new Intent(this,MyPlan.class);
+                startActivity(intent);
+                break;
+            case R.id.buttonReports:
+                intent = new Intent(this,MyReports.class);
+                startActivity(intent);
+                break;
         }
 
     }

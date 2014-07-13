@@ -34,4 +34,19 @@
             android:textStyle="bold"
             android:focusableInTouchMode="true"
             android:onClick="onShow"/>
+
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="122dp"
+            android:text="Reports"
+            android:id="@+id/buttonReports"
+            android:textStyle="bold"
+            android:focusableInTouchMode="true"
+            android:onClick="onShow"/>
+    <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Plan"
+            android:id="@+id/buttonPlan" android:onClick="onShow"/>
+
 </LinearLayout>

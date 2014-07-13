@@ -2,44 +2,79 @@ package com.home.homefinance.activity.activity;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import com.home.HomeFinance.R;
-import com.home.homefinance.activity.adapter.CostsCategoryAdapter;
-import com.home.homefinance.activity.myListCosts.CostsCategory;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.home.homefinance.activity.bd.Name;
+import com.home.homefinance.activity.bd.SqlAdapter;
 
 public class MyCosts  extends Activity {
 
-    private ListView listView;
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.costs_list_layout);
+        SqlAdapter adapter;
 
-        listView = (ListView) findViewById(R.id.listView);
+        EditText nameEdit;
+        ListView listView;
+        TextView currentName;
 
-        CostsCategoryAdapter adapter = new CostsCategoryAdapter(this,initData() );
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.costs_layout);
+            setUpView();
+        }
 
-        listView.setAdapter(adapter);
-    }
+        public void addName(View view) {
+            String name = nameEdit.getText().toString().trim();
+            if (!"".equals(name)) {
+                Name newName = new Name(name);
+                adapter.addItem(newName);
+            }
+            finishInput();
+        }
 
-    private List<CostsCategory> initData(){
-        List<CostsCategory> list=new ArrayList<CostsCategory>();
-        list.add(new CostsCategory(1,"Products",1000));
-        list.add(new CostsCategory(2,"Clothing",1000));
-        list.add(new CostsCategory(3,"Cars",1000));
-        list.add(new CostsCategory(4,"Children",1000));
-        list.add(new CostsCategory(5,"Parents",1000));
-        list.add(new CostsCategory(6,"Medicine",1000));
-        list.add(new CostsCategory(7,"Contingencies",1000));
-        list.add(new CostsCategory(8,"Recreation",1000));
-        list.add(new CostsCategory(9,"Gifts",1000));
-        return list;
+        private void setUpView() {
+            listView = getListView();
+            currentName = (TextView) findViewById(R.id.name_view1);
+            nameEdit = (EditText) findViewById(R.id.name_edit);
 
+            adapter = new SqlAdapter(this);
+            // setListAdapter(adapter);
+        }
 
+        // ����� ������� ���� ����� � ������ �������� ����������
+        private void finishInput() {
+            nameEdit.getText().clear();
+            InputMethodManager mgr = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            mgr.hideSoftInputFromWindow(nameEdit.getWindowToken(), 0);
+        }
+
+        public void removeEntry(View view) {
+            String name = currentName.getText().toString();
+            Name nameToRemove = new Name(name);
+            adapter.removeItem(nameToRemove);
+            currentName.setText("��� ������� ������?");
+        }
+
+      //  @Override
+        protected void onListItemClick(ListView list, View v, int position, long id) {
+            super.findViewById(R.layout.costs_layout);
+            Name selectedName = adapter.getItem(position);
+            currentName.setText(selectedName.getName());
+        }
+
+        @Override
+        public void onDestroy() {
+            super.onDestroy();
+            adapter.onDestroy();
+        }
+
+    public ListView getListView() {
+        return listView;
     }
 }

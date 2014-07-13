@@ -1,8 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-
-</LinearLayout>
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText"
+            android:text="Дата нач."
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true" android:layout_alignRight="@+id/editText5"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:text="Дата кон." android:layout_below="@+id/textView" android:layout_alignRight="@+id/textView4"
+            android:layout_alignLeft="@+id/textView2"/>
+    <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker"
+            android:layout_below="@+id/editText3"
+            android:layout_centerHorizontal="true"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText3"
+            android:layout_alignParentTop="false"
+            android:layout_alignLeft="@+id/datePicker"
+            android:layout_alignRight="@+id/datePicker"
+            android:text="Остаток Денег на дату"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="false"
+            android:layout_alignWithParentIfMissing="false"
+            android:autoText="false" android:focusable="false" android:gravity="center_vertical|center_horizontal"/>
+    <EditText android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/editText4"
+              android:layout_below="@+id/editText5" android:layout_alignLeft="@+id/datePicker"
+              android:text="Остаток Денег план на дату"
+              android:layout_alignParentEnd="false" android:background="@android:color/holo_blue_light"
+              android:layout_alignRight="@+id/datePicker"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Расходы план на дату"
+            android:id="@+id/textView"
+            android:layout_below="@+id/datePicker"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@+id/editText"
+            android:layout_toLeftOf="@+id/textView2"
+            android:background="@android:color/holo_blue_light" android:clickable="true"
+            android:layout_marginLeft="5dp" android:layout_marginRight="5dp"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:text="Расходы факт на дату"
+              android:id="@+id/textView2"
+              android:layout_below="@+id/datePicker"
+              android:layout_alignParentRight="true"
+              android:layout_above="@+id/editText2"
+              android:layout_toRightOf="@+id/editText"
+              android:background="@android:color/holo_blue_light" android:layout_marginLeft="5dp"
+              android:layout_marginRight="5dp"/>
+    <EditText android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:inputType="date"
+              android:ems="10" android:id="@+id/editText5"
+              android:text="Дата нач."
+              android:layout_alignTop="@+id/editText6"
+              android:layout_alignParentLeft="true"/>
+    <EditText android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:inputType="date"
+              android:ems="10"
+              android:id="@+id/editText6"
+              android:text="Дата кон."
+              android:layout_below="@+id/textView3"
+              android:layout_alignParentRight="true"
+              android:layout_alignLeft="@+id/textView4"/>
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:text="Доходы факт на дату"
+              android:id="@+id/textView3"
+              android:layout_below="@+id/editText"
+              android:clickable="true"
+              android:background="@android:color/holo_blue_light" android:layout_alignRight="@+id/textView"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Расходы"
+            android:id="@+id/button"
+            android:layout_below="@+id/editText4"
+            android:layout_alignParentLeft="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Доходы"
+            android:id="@+id/button2"
+            android:layout_below="@+id/editText4"
+            android:layout_toRightOf="@+id/button"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="План доходы"
+            android:id="@+id/button3"
+            android:layout_below="@+id/editText4"
+            android:layout_alignParentRight="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="План Расходы"
+            android:id="@+id/button4"
+            android:layout_alignBottom="@+id/button2"
+            android:layout_toRightOf="@+id/button2"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="На главную  "
+            android:id="@+id/button5"
+            android:layout_below="@+id/button3"
+            android:layout_alignParentRight="true"
+            android:layout_alignLeft="@+id/button3"
+            android:layout_alignParentStart="true"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textAppearance="?android:attr/textAppearanceLarge" android:text="Доходы факт на дату"
+              android:id="@+id/textView4"
+              android:clickable="true" android:background="@android:color/holo_blue_light"
+              android:layout_below="@+id/editText2" android:layout_alignLeft="@+id/textView2"
+            />
+</RelativeLayout>

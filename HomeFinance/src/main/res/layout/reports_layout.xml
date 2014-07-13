@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
+            android:text="Нач. дата"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText2" android:layout_alignParentTop="true" android:layout_toRightOf="@+id/editText"
+            android:text="Кон. дата"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button" android:layout_below="@+id/editText" android:layout_centerHorizontal="true"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New CheckBox"
+            android:id="@+id/checkBox" android:layout_below="@+id/button" android:layout_toLeftOf="@+id/button"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New CheckBox"
+            android:id="@+id/checkBox2" android:layout_below="@+id/checkBox" android:layout_alignParentLeft="true"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New CheckBox"
+            android:id="@+id/checkBox3" android:layout_below="@+id/checkBox2" android:layout_alignParentLeft="true"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New CheckBox"
+            android:id="@+id/checkBox4" android:layout_below="@+id/checkBox3" android:layout_alignParentLeft="true"/>
+    <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New RadioButton"
+            android:id="@+id/radioButton" android:layout_below="@+id/button" android:layout_toRightOf="@+id/editText"
+            android:layout_above="@+id/checkBox2" android:checked="false"/>
+    <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New RadioButton"
+            android:id="@+id/radioButton2" android:layout_below="@+id/radioButton"
+            android:layout_alignLeft="@+id/radioButton"/>
+</RelativeLayout>
